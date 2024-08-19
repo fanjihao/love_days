@@ -1,6 +1,8 @@
 name: Rust
 
 on:
+  push:
+    branches: [ "master" ]
   schedule:
     - cron: '00 09 * * *'  # 每天 16:35 UTC 时间执行
 
