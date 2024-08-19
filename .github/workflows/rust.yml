@@ -1,10 +1,10 @@
 name: Rust
 
 on:
-  push:
-    branches: [ "master" ]
+  # push:
+    # branches: [ "master" ]
   schedule:
-    - cron: '00 09 * * *'  # 每天 16:35 UTC 时间执行
+    - cron: '30 01 * * *'
 
 env:
   CARGO_TERM_COLOR: always
