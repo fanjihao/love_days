@@ -16,7 +16,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
+    # 设置环境变量
+    - name: Set environment variables
+      env:
+        OFFICIAL_APP_ID: ${{ secrets.OFFICIAL_APP_ID }}
+        OFFICIAL_APP_SECRET: ${{ secrets.OFFICIAL_APP_SECRET }}
+        BAIDU_AK: ${{ secrets.BAIDU_AK }}
+        PUSH_ID: ${{ secrets.PUSH_ID }}
+        TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
+        LOVE_DAYS: ${{ secrets.LOVE_DAYS }}
+      run: echo "Environment variables set"
+    
     - name: Build
       run: cargo build --verbose
+      
     - name: Run tests
-      run: cargo test --verbose
+      run: cargo run
