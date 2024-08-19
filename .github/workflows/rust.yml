@@ -34,4 +34,12 @@ jobs:
       run: cargo build --verbose
       
     - name: Run tests
+      env:
+        OFFICIAL_APP_ID: ${{ secrets.OFFICIAL_APP_ID }}
+        OFFICIAL_APP_SECRET: ${{ secrets.OFFICIAL_APP_SECRET }}
+        BAIDU_AK: ${{ secrets.BAIDU_AK }}
+        PUSH_ID: ${{ secrets.PUSH_ID }}
+        TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
+        LOVE_DAYS: ${{ secrets.LOVE_DAYS }}
+        
       run: cargo run
