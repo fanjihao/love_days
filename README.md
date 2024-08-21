@@ -10,47 +10,47 @@
 
 ![QQ_1724211440805](https://github.com/user-attachments/assets/11561414-a679-4733-b833-0d4ec68e7d8d)
 
-import json
+    import json
 
-import requests
+    import requests
 
-import os
+    import os
 
-def handler (event, context):
+    def handler (event, context):
 
-    url = f"https://api.github.com/repos/github用户名/仓库名/actions/workflows/workflow文件名/dispatches"
+        url = f"https://api.github.com/repos/github用户名/仓库名/actions/workflows/workflow文件名/dispatches"
     
-    headers = {
+        headers = {
     
-        "Authorization": f"token {os.getenv('GITHUB_TOKEN')}",
+            "Authorization": f"token {os.getenv('GITHUB_TOKEN')}",
         
-        "Accept": "application/vnd.github.everest-preview+json",
+            "Accept": "application/vnd.github.everest-preview+json",
         
-    }
-    
-    data = {
-    
-        "ref": "分支名"
-        
-    }
-    
-    response = requests.post(url, headers=headers, data=json.dumps(data))
-    
-    return {
-    
-        "statusCode": response.status_code,
-        
-        "isBase64Encoded": False,
-        
-        "body": response.text,
-        
-        "headers": {
-        
-            "Content-Type": "application/json"
-            
         }
+    
+        data = {
+    
+            "ref": "分支名"
         
-    }
+        }
+    
+        response = requests.post(url, headers=headers, data=json.dumps(data))
+    
+        return {
+    
+            "statusCode": response.status_code,
+        
+            "isBase64Encoded": False,
+        
+            "body": response.text,
+        
+            "headers": {
+        
+                "Content-Type": "application/json"
+            
+            }
+        
+        }
     
 3.环境变量
 
