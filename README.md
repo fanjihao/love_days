@@ -62,9 +62,9 @@ def handler (event, context):
 
 cron表达式
 
-CRON_TZ=Asia/Shanghai 0 59 09 * * *
+     CRON_TZ=Asia/Shanghai 0 59 09 * * *
 
-                        分 时
+                             分 时
                         
 5.测试
 
